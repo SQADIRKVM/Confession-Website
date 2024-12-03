@@ -33,7 +33,7 @@ A modern platform for anonymous confessions, built using **HTML**, **CSS**, **Ja
 
 1. **Clone the Repository**:  
    ```bash  
-   git clone https://github.com/yourusername/Confession-Website.git  
+   git clone https://github.com/SQADIRKVM/Confession-Website.git  
    cd Confession-Website  
    ```  
 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Confessions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-heart"></i> Secret Confessions</h1>
+            <p class="subtitle">Where hearts speak freely</p>
+            <div class="confession-counter">
+                <i class="fas fa-scroll"></i>
+                <span id="totalConfessions">0</span> Hearts Shared
+            </div>
+        </header>
+        
+        <main>
+            <section class="form-section">
+                <div class="form-header">
+                    <i class="fas fa-feather-alt"></i>
+                    <h2>Share Your Heart</h2>
+                </div>
+                <form id="confessionForm">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user-secret"></i> Your Name (optional)</label>
+                        <input type="text" id="name" name="name" placeholder="Anonymous Heart">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confession"><i class="fas fa-heart"></i> Your Secret</label>
+                        <textarea id="confession" name="confession" rows="4" 
+                            placeholder="Pour your heart out..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Share Anonymously
+                    </button>
+                </form>
+            </section>
+
+            <section class="confessions-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-heartbeat"></i> Shared Secrets</h2>
+                </div>
+                <div id="confessionList" class="confession-grid"></div>
+            </section>
+        </main>
+        
+        <footer>
+            <p><i class="fas fa-lock"></i> Your secrets are safe with us</p>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

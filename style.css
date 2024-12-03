@@ -1,0 +1,500 @@
+:root {
+    --primary-color: #ff4d6d;
+    --secondary-color: #ff758f;
+    --background-color: #fff0f3;
+    --text-color: #590d22;
+    --card-color: #ffffff;
+    --accent-color: #ff8fa3;
+    --shadow: 0 4px 6px rgba(255, 77, 109, 0.1);
+    --hover-shadow: 0 8px 15px rgba(255, 77, 109, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+h1 i {
+    font-size: 2rem;
+}
+
+.subtitle {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+/* Form Styles */
+.form-section {
+    background: var(--card-color);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.form-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+label i {
+    color: var(--primary-color);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: white;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px);
+}
+
+/* Confessions Section */
+.confessions-section {
+    margin-top: 3rem;
+}
+
+.confessions-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.confession-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.confession-item {
+    background: var(--card-color);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--primary-color);
+    position: relative;
+    min-height: 150px;
+    padding-bottom: 4rem;
+}
+
+.confession-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.confession-item p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    word-wrap: break-word;
+}
+
+.confession-item strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.confession-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-color);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-radius: 0 0 20px 20px;
+}
+
+.timestamp {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.error-message, .no-confessions {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-color);
+    border-radius: 10px;
+    color: var(--secondary-color);
+    grid-column: 1 / -1;
+}
+
+.error-message i, .no-confessions i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    grid-column: 1 / -1;
+}
+
+.loading i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.confession-counter {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.confession-counter i {
+    font-size: 1.2rem;
+}
+
+.confession-counter span {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+/* Custom SweetAlert Styles */
+.swal2-popup {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    padding: 2rem !important;
+    border: 1px solid rgba(108, 92, 231, 0.1) !important;
+}
+
+.swal2-title {
+    color: var(--primary-color) !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+}
+
+.swal2-html-container {
+    color: var(--text-color) !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.1rem !important;
+}
+
+.swal2-icon {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+.swal2-success-ring {
+    border-color: var(--primary-color) !important;
+}
+
+.swal2-success-line-tip,
+.swal2-success-line-long {
+    background-color: var(--primary-color) !important;
+}
+
+.swal2-timer-progress-bar {
+    background: var(--primary-color) !important;
+}
+
+/* Animation for form submission */
+@keyframes sendConfession {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.form-sending {
+    animation: sendConfession 1s ease infinite;
+}
+
+/* Success animation */
+@keyframes successPop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.swal2-show {
+    animation: successPop 0.5s ease !important;
+}
+
+.swal2-hide {
+    animation: successPop 0.5s ease reverse !important;
+}
+
+/* Add these styles for the toast notification */
+.animated-toast {
+    padding: 0.5rem 1rem !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-left: 4px solid var(--primary-color) !important;
+}
+
+.toast-title {
+    font-size: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.heart-icon {
+    color: #ff4d6d;
+    animation: heartBeat 1s ease infinite;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.3);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.3);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+/* Override some SweetAlert styles for toast */
+.swal2-toast {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+}
+
+.swal2-toast .swal2-title {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.swal2-toast .swal2-icon {
+    display: none !important;
+}
+
+/* Add these styles for the share button and footer */
+.confession-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.share-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.share-btn:hover {
+    background: rgba(255, 77, 109, 0.1);
+    transform: translateY(-2px);
+}
+
+.share-btn i {
+    font-size: 0.9rem;
+}
+
+/* Update form-header styles */
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.form-header i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-header h2 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+/* Styles for the confession card image */
+.confession-card-for-image {
+    position: fixed;
+    top: -9999px;
+    left: -9999px;
+    width: 600px;
+    padding: 20px;
+    background: #fff0f3;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.confession-card-for-image .card-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border-top: 4px solid #ff4d6d;
+}
+
+.confession-card-for-image h3 {
+    color: #ff4d6d;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.confession-card-for-image .confession-text {
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.confession-card-for-image .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.confession-card-for-image .card-link {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    color: #ff4d6d;
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.button-group .share-btn {
+    padding: 0.5rem;
+}
+
